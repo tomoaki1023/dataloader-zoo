@@ -14,8 +14,7 @@ def imread(image_path: str) -> np.array:
     try:
         with Image.open(image_path) as image:
             rgb_image = image.convert("RGB")
-            np_image = np.array(rgb_image)
-        return np_image
+        return rgb_image
 
     except Exception as e:
         raise ValueError(f"Failed to load image: {image_path}. Error: {str(e)}")
