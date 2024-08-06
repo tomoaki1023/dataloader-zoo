@@ -39,8 +39,10 @@ def main(args):
     train_data, train_labels, val_data, val_labels = load_dataset(dataset_param)
 
     train_dataset = COCODataset(train_data, train_labels, input_image_size, train=True)
+    # val_dataset = COCODataset(val_data, val_labels, input_image_size, train=False)
 
     train_dataloader = DataLoader(train_dataset, batch_size, shuffle=True)
+    # val_dataloader = DataLoader(val_dataset, batch_size, shuffle=False)
 
     for epoch in range(1, epochs + 1):
         print(f"epoch: {epoch}")
